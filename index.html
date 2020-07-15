@@ -185,12 +185,10 @@
         });
 
         // 刪除資料
-        list.addEventListener('click', function (e) {
-            if (e.target.nodeName == 'LI') {
-                var key = e.target.dataset.key;
-                family.child(key).remove();
-            }
-        })
+        $('#list').on('click', 'li', function () {
+            var key = $(this).data('key');
+            family.child(key).remove();
+        });
     </script>
 </body>
 </html>
